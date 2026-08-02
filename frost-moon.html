@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Nod-Krai | Apéthic</title>
+
+<link rel="stylesheet" href="Desain.css">
+
+<style>
+
+.order-page{
+    max-width:700px;
+    margin:70px auto;
+    padding:25px;
+}
+
+.order-box{
+    background:var(--bg-card);
+    backdrop-filter:blur(25px);
+    border:1px solid var(--glass-border);
+    border-radius:28px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.order-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:8px;
+    color:var(--text-light);
+}
+
+.order-subtitle{
+    text-align:center;
+    color:var(--text-subtle);
+    margin-bottom:30px;
+}
+
+
+.form-group{
+    margin-bottom:18px;
+}
+
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--text-light);
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+    padding:14px 16px;
+
+    border:none;
+    border-radius:16px;
+
+    background:white;
+
+    color:#333;
+
+    font-size:15px;
+    outline:none;
+
+}
+
+
+.form-group textarea{
+
+height:110px;
+resize:none;
+
+}
+
+
+.submit-btn{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:999px;
+
+background:var(--natlan-gradient);
+
+color:white;
+
+font-family:var(--font-catalog);
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.submit-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.back-btn{
+
+display:block;
+
+text-align:center;
+
+margin-top:18px;
+
+text-decoration:none;
+
+color:var(--text-subtle);
+
+}
+
+</style>
+
+</head>
+
+
+<body class="blue-theme">
+
+
+<div class="order-page">
+
+<div class="order-box">
+
+
+<h1 class="order-title">
+☆ Paket Explore Frost Moon♡
+</h1>
+
+
+<p class="order-subtitle">
+Silakan isi formulir berikut.
+</p>
+
+
+
+<form onsubmit="kirimWA(event)">
+
+
+<div class="form-group">
+
+<label>Nama</label>
+
+<input 
+id="nama"
+type="text"
+placeholder="Masukkan nama"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>UID</label>
+
+<input
+id="uid"
+type="number"
+placeholder="800123456"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Server</label>
+
+<select id="server">
+
+<option>Asia</option>
+<option>Europe</option>
+<option>America</option>
+<option>TW, HK, MO</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Login Menggunakan</label>
+
+<select id="login">
+
+<option>Google</option>
+<option>Hoyoverse</option>
+<option>Twitter / X</option>
+<option>Facebook</option>
+
+</select>
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>Metode Pembayaran</label>
+
+<select id="bayar">
+
+<option>DANA</option>
+<option>OVO</option>
+<option>GoPay</option>
+
+</select>
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>Note</label>
+
+<textarea
+id="note"
+placeholder="Contoh: Kerjakan sampai 100%, jangan buka wish, dsb.">
+</textarea>
+
+</div>
+
+
+
+<button class="submit-btn">
+
+Lanjut ke WhatsApp
+
+</button>
+
+
+
+</form>
+
+
+<a href="explore.html" class="back-btn">
+
+← Kembali
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+function kirimWA(event){
+
+event.preventDefault();
+
+
+let nama = document.getElementById("nama").value;
+let uid = document.getElementById("uid").value;
+let server = document.getElementById("server").value;
+let login = document.getElementById("login").value;
+let bayar = document.getElementById("bayar").value;
+let note = document.getElementById("note").value;
+
+
+
+let pesan = 
+`Halo Apéthic, saya ingin order Paket Explore Nod-Krai.
+
+Nama : ${nama}
+UID : ${uid}
+Server : ${server}
+Login menggunakan : ${login}
+Metode Pembayaran : ${bayar}
+
+Note :
+${note}`;
+
+
+
+let nomor = "6282254663027";
+
+
+let url = 
+"https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+
+
+
+window.location.href = url;
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>

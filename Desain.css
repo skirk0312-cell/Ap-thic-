@@ -362,134 +362,68 @@ footer {
 /* BLUE MODE */
 
 body.blue-theme{
-
---bg-dark:#edf7ff;
-
---bg-card:rgba(194,228,255,.45);
-
---glass-border:rgba(130,190,255,.4);
-
---glass-border-hover:#72b5ff;
-
---natlan-gradient:linear-gradient(135deg,#74c7ff,#89d8ff,#c0eeff);
-
---card-gradient:linear-gradient(180deg,#d8efff,#edf8ff);
-
---text-light:#23374d;
-
---text-subtle:#56708d;
-
+    --bg-dark:#edf7ff;
+    --bg-card:rgba(194,228,255,.45);
+    --glass-border:rgba(130,190,255,.4);
+    --glass-border-hover:#72b5ff;
+    --natlan-gradient:linear-gradient(135deg,#74c7ff,#89d8ff,#c0eeff);
+    --card-gradient:linear-gradient(180deg,#d8efff,#edf8ff);
+    --text-light:#23374d;
+    --text-subtle:#56708d;
 }
 
 
 /* PINK MODE */
 
 body.pink-theme{
-
---bg-dark:#fff2fa;
-
---bg-card:rgba(255,215,236,.45);
-
---glass-border:rgba(255,170,220,.4);
-
---glass-border-hover:#ff92c8;
-
---natlan-gradient:linear-gradient(135deg,#ff9ac8,#ffc4df,#ffdced);
-
---card-gradient:linear-gradient(180deg,#ffe6f2,#fff5fb);
-
---text-light:#5d3552;
-
---text-subtle:#8d6a80;
-
+    --bg-dark:#fff2fa;
+    --bg-card:rgba(255,215,236,.45);
+    --glass-border:rgba(255,170,220,.4);
+    --glass-border-hover:#ff92c8;
+    --natlan-gradient:linear-gradient(135deg,#ff9ac8,#ffc4df,#ffdced);
+    --card-gradient:linear-gradient(180deg,#ffe6f2,#fff5fb);
+    --text-light:#5d3552;
+    --text-subtle:#8d6a80;
 }
 
 .section-title{
-
-animation:floatTitle 4s ease-in-out infinite;
-
+    animation:floatTitle 4s ease-in-out infinite;
 }
 
 @keyframes floatTitle{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0px); }
 }
 
 .logo-square{
-
-animation:logoGlow 3s infinite alternate;
-
+    animation:logoGlow 3s infinite alternate;
 }
 
 @keyframes logoGlow{
-
-0%{
-
-box-shadow:0 0 10px rgba(255,255,255,.2);
-
-}
-
-100%{
-
-box-shadow:0 0 30px rgba(255,180,230,.8);
-
-}
-
+    0%{ box-shadow:0 0 10px rgba(255,255,255,.2); }
+    100%{ box-shadow:0 0 30px rgba(255,180,230,.8); }
 }
 
 .catalog-card{
-
-opacity:0;
-
-transform:translateY(40px);
-
-animation:fadeUp .8s forwards;
-
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp .8s forwards;
 }
 
-.catalog-card:nth-child(2){
-
-animation-delay:.2s;
-
-}
-
-.catalog-card:nth-child(3){
-
-animation-delay:.4s;
-
-}
-
-.catalog-card:nth-child(4){
-
-animation-delay:.6s;
-
-}
+.catalog-card:nth-child(2){ animation-delay:.2s; }
+.catalog-card:nth-child(3){ animation-delay:.4s; }
+.catalog-card:nth-child(4){ animation-delay:.6s; }
 
 @keyframes fadeUp{
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* ============================= */
-/* EXPLORE PAGE */
+/* EXPLORE & QUEST PAGE */
 /* ============================= */
 
 .card-price{
@@ -515,10 +449,8 @@ transform:translateY(0);
     text-decoration:none;
     font-family:var(--font-catalog);
     font-size:14px;
-
     color:white;
     background:var(--natlan-gradient);
-
     transition:.3s;
 }
 
@@ -529,20 +461,36 @@ transform:translateY(0);
 
 /* Mobile */
 @media(max-width:768px){
-
-    .card-price{
-        font-size:14px;
-    }
-
-    .card-desc{
-        font-size:13px;
-        line-height:1.5;
-    }
-
+    .card-price{ font-size:14px; }
+    .card-desc{ font-size:13px; line-height:1.5; }
     .order-btn{
-    width:100%;
-    text-align:center;
-    padding:10px 14px;
-    font-size:13px;
+        width:100%;
+        text-align:center;
+        padding:10px 14px;
+        font-size:13px;
+    }
+}
 
+/* FIX: Klik mouse menembus elemen anak ke kartu utama */
+.card-image-wrapper, 
+.card-image-wrapper img, 
+.card-glow, 
+.card-caption, 
+.card-caption * {
+    pointer-events: none;
+}
+
+/* Base Style Kartu Pilihan */
+.selectable-card {
+    cursor: pointer !important;
+    user-select: none;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* OUTLINE EFEK SAAT KARTU DIKLIK (SELECTED) */
+.selectable-card.selected {
+    border: 3px solid #ff8c00 !important;
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.8), inset 0 0 15px rgba(255, 140, 0, 0.3) !important;
+    transform: translateY(-6px) scale(1.02);
 }

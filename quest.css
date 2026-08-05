@@ -1,0 +1,26 @@
+/* Import font & variabel dasar dari Desain.css */
+@import url('Desain.css');
+
+/* Tampilan Kartu Khusus Quest (Pointer Events On) */
+.quest-card {
+    cursor: pointer !important;
+    user-select: none;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Supaya klik mouse tidak terhalang gambar / tulisan di dalam kartu */
+.quest-card .card-image-wrapper,
+.quest-card .card-image-wrapper img,
+.quest-card .card-glow,
+.quest-card .card-caption,
+.quest-card .card-caption * {
+    pointer-events: none !important;
+}
+
+/* EFEK OUTLINE SAAT KARTU DIKLIK (SELECTED) */
+.quest-card.selected {
+    border: 3px solid #ff8c00 !important;
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.85), inset 0 0 15px rgba(255, 140, 0, 0.3) !important;
+    transform: translateY(-6px) scale(1.02);
+}

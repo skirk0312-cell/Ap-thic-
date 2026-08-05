@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joki Quest - Apéthic Store</title>
+    <meta name="description" content="Layanan Joki Quest Genshin Impact Terpercaya Apéthic Store.">
+    <!-- Memanggil CSS khusus Quest -->
+    <link rel="stylesheet" href="quest.css">
+</head>
+<body>
+
+    <!-- Header & Hero Banner -->
+    <header class="banner-header-wrapper">
+        <img src="asset/images/varesa-banner-1.webp" alt="Banner Joki Quest" class="banner-img">
+        <div class="banner-overlay"></div>
+        
+        <!-- Logo Brand & Theme Switcher -->
+        <div class="brand-container">
+            <div class="theme-switch">
+                <button id="themeBtn">☁️ Blue Mode</button>
+            </div>
+            <div class="logo-square">
+                <span>A</span>
+            </div>
+            <div class="brand-name">Apéthic</div>
+        </div>
+    </header>
+
+    <!-- Main Content: Catalog Quest -->
+    <main>
+        <div class="section-header">
+            <h2 class="section-title">☆Joki Quest♡</h2>
+            <p class="section-subtitle">Pilih sesuai kebutuhanmu ♡</p>
+        </div>
+
+        <!-- Grid Produk Quest -->
+        <div class="catalog-grid">
+
+            <!-- Produk 1 -->
+            <div class="catalog-card quest-card" data-nama="Archon Quest" data-harga="Rp 25.000 / Act">
+                <div class="card-image-wrapper">
+                    <img src="asset/images/beaa7928-b6f9-4b1e-900b-36a2f1999ed7.jpeg" alt="Archon Quest">
+                    <div class="card-glow"></div>
+                </div>
+                <div class="card-caption">
+                    <h3>☆ Archon Quest ♡</h3>
+                    <p class="card-desc"></p>
+                    <div class="card-price">Rp 25.000 / Act</div>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="catalog-card quest-card" data-nama="World Quest" data-harga="Chat Admin">
+                <div class="card-image-wrapper">
+                    <img src="asset/images/e711b62d-3ded-4ade-9af7-f992532154c5.jpeg" alt="World Quest">
+                    <div class="card-glow"></div>
+                </div>
+                <div class="card-caption">
+                    <h3>☆ World Quest♡</h3>
+                    <p class="card-desc"></p>
+                    <div class="card-price">Chat Admin</div>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="catalog-card quest-card" data-nama="Hangout Quest" data-harga="Rp 20.000 / Karakter">
+                <div class="card-image-wrapper">
+                    <img src="asset/images/2cee96f6-b754-4003-876d-db4a55fb5269.jpeg" alt="Hangout Quest">
+                    <div class="card-glow"></div>
+                </div>
+                <div class="card-caption">
+                    <h3>♡Hangout Quest☆</h3>
+                    <p class="card-desc"></p>
+                    <div class="card-price">Rp 20.000 / Karakter</div>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="catalog-card quest-card" data-nama="Story Quest" data-harga="Rp 20.000 / Karakter">
+                <div class="card-image-wrapper">
+                    <img src="asset/images/ff44366f-013c-4a5d-b250-0bff8af6ad8f.jpeg" alt="Story Quest">
+                    <div class="card-glow"></div>
+                </div>
+                <div class="card-caption">
+                    <h3>♡Story Quest☆</h3>
+                    <p class="card-desc"></p>
+                    <div class="card-price">Rp 20.000 / Karakter</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section Persetujuan & Konfirmasi Order -->
+        <section class="order-action-container" style="margin-top: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+            
+            <div class="agreement-wrapper" style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-subtle);">
+                <input type="checkbox" id="agreeCheckbox" style="accent-color: #ff8c00; width: 18px; height: 18px; cursor: pointer;">
+                <label for="agreeCheckbox" style="cursor: pointer;">Saya telah menyetujui syarat & ketentuan pemesanan Joki Apéthic</label>
+            </div>
+
+            <button id="confirmBtn" class="order-btn" style="min-width: 220px; border: none; cursor: pointer;">
+                CONFIRM ORDER
+            </button>
+            
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <a href="https://wa.me/6282254663027" target="_blank" class="whatsapp-link">
+                <svg class="phone-icon" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span>Question? Contact WA</span>
+            </a>
+
+            <div class="copyright">
+                ©2026 Apéthic
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* Event Page Layout & Tab Styling */
+.event-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    color: var(--text-subtle);
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: var(--font-catalog);
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 140, 0, 0.5);
+}
+
+.tab-btn.active {
+    background: var(--natlan-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.3);
+}
+
+/* Tab Content Visibility (Sistem Switch tanpa Bayangan Geser) */
+.tab-pane {
+    display: none; /* Sembunyikan semua tab secara default */
+    width: 100%;
+}
+
+.tab-pane.active-pane {
+    display: block; /* Hanya tampilkan tab yang aktif */
+    animation: fadeInTab 0.4s ease-in-out;
+}
+
+@keyframes fadeInTab {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Empty State Regular Event */
+.empty-event-box {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--bg-card);
+    border-radius: var(--apple-radius);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(25px);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.empty-event-text {
+    font-family: 'CoolveticaRg', -apple-system, sans-serif;
+    font-size: 24px;
+    color: #ffaa55;
+    letter-spacing: 0.5px;
+}

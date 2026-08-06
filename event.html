@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joki Event - Apéthic Store</title>
+    <!-- CSS Utama & CSS Khusus Event -->
+    <link rel="stylesheet" href="Desain.css">
+    <link rel="stylesheet" href="event.css">
+    <link rel="icon" type="image/png" href="asset/images/New Project 59 [660D602].png">
+</head>
+<body>
+
+    <!-- Header & Hero Banner -->
+    <header class="banner-header-wrapper">
+        <img src="asset/images/h2jteb88vfdf1.png" alt="Joki Event" class="banner-img">
+        <div class="banner-overlay"></div>
+        
+        <div class="brand-container">
+            <div class="theme-switch">
+                <button id="themeBtn">☁️ Blue Mode</button>
+            </div>
+            <div class="logo-square">
+                <img src="asset/images/New Project 59 [660D602].png" alt="Logo Apéthic" class="brand-logo-img">
+            </div>
+            <div class="brand-name">Apéthic</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="section-header">
+            <h2 class="section-title">♡ Joki Event Genshin Impact ☆</h2>
+            <p class="section-subtitle">Pilih kategori event yang ingin kamu jokiin ya♡.</p>
+        </div>
+
+        <!-- Tab Tombol Pilihan -->
+        <div class="event-tabs">
+            <button type="button" class="tab-btn active" id="tabUtama">Event Utama</button>
+            <button type="button" class="tab-btn" id="tabRegular">Regular Event</button>
+        </div>
+
+        <!-- Section 1: Event Utama -->
+        <div class="tab-pane active-pane" id="paneUtama">
+            <div class="catalog-grid" style="grid-template-columns: repeat(1, minmax(0, 480px)); justify-content: center;">
+                
+                <!-- Card Event Utama -->
+                <div class="catalog-card">
+                    <div class="card-image-wrapper">
+                        <img src="asset/images/Great_Expeditionist_Challenge.webp" alt="Great Expeditionist Challenge">
+                        <div class="card-glow"></div>
+                    </div>
+
+                    <div class="card-caption">
+                        <h3>☆ Great Expeditionist Challenge ♡</h3>
+
+                        <p class="card-price">
+                            Harga : Rp35.000
+                        </p>
+
+                        <p class="card-desc">
+                            Full Unlocked All Chapter & Full Reward Primogems☆
+                        </p>
+
+                        <!-- Tombol Langsung ke WA 082254663027 -->
+                        <a href="https://wa.me/6282254663027?text=Halo%20Ap%C3%A9thic%20Store!%0ASaya%20ingin%20memesan%20Joki%20Event%20Utama:%20Great%20Expeditionist%20Challenge%20(Rp35.000).%0AMohon%20diproses%20ya!%E2%98%86" target="_blank" class="order-btn">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section 2: Regular Event -->
+        <div class="tab-pane" id="paneRegular">
+            <div class="empty-event-box">
+                <p class="empty-event-text">Maaf Lagi Gaada event!</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <a href="index.html" class="whatsapp-link">
+                ← Kembali ke Beranda
+            </a>
+
+            <div class="copyright">
+                ©2026 Apéthic
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabUtama = document.getElementById("tabUtama");
+            const tabRegular = document.getElementById("tabRegular");
+            const paneUtama = document.getElementById("paneUtama");
+            const paneRegular = document.getElementById("paneRegular");
+
+            if (tabUtama && tabRegular) {
+                tabUtama.addEventListener("click", () => {
+                    tabUtama.classList.add("active");
+                    tabRegular.classList.remove("active");
+                    
+                    paneUtama.classList.add("active-pane");
+                    paneRegular.classList.remove("active-pane");
+                });
+
+                tabRegular.addEventListener("click", () => {
+                    tabRegular.classList.add("active");
+                    tabUtama.classList.remove("active");
+                    
+                    paneRegular.classList.add("active-pane");
+                    paneUtama.classList.remove("active-pane");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

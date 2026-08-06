@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joki Rawat Akun - Apéthic Store</title>
+    <link rel="stylesheet" href="Desain.css">
+    <link rel="icon" type="image/png" href="asset/images/New Project 59 [660D602].png">
+
+    <style>
+        /* Penyesuaian khusus halaman Rawat Akun */
+        .counter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .counter-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .counter-btn:hover {
+            background: rgba(255, 140, 0, 0.3);
+            border-color: rgba(255, 140, 0, 0.6);
+            transform: scale(1.08);
+        }
+
+        .days-display {
+            font-family: var(--font-catalog);
+            font-size: 24px;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .action-box {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 28px;
+            border-radius: var(--apple-radius);
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .confirm-btn-wrapper {
+            margin-top: 24px;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            padding: 14px 24px;
+            border-radius: 999px;
+            border: none;
+            font-family: var(--font-catalog);
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: var(--natlan-gradient);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.25);
+        }
+
+        .confirm-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Hero Banner -->
+    <header class="banner-header-wrapper">
+        <img src="asset/images/genshin_impact_xilonen_guide_build_copetina.webp" alt="Joki Rawat Akun" class="banner-img">
+        <div class="banner-overlay"></div>
+        
+        <div class="brand-container">
+            <div class="theme-switch">
+                <button id="themeBtn">☁️ Blue Mode</button>
+            </div>
+            <div class="logo-square">
+                <img src="asset/images/New Project 59 [660D602].png" alt="Logo Apéthic" class="brand-logo-img">
+            </div>
+            <div class="brand-name">Apéthic</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="section-header">
+            <h2 class="section-title">♡ Joki Rawat Akun ☆</h2>
+            <p class="section-subtitle">Pilih berapa hari kamu butuh bantuan rawat akun☆</p>
+        </div>
+
+        <div class="action-box">
+            <p class="section-subtitle" style="font-size: 16px; color: #ffffff;">Mau Joki Berapa Hari hm?☆</p>
+            
+            <div class="counter-container">
+                <button type="button" class="counter-btn" id="minusBtn">-</button>
+                <div class="days-display"><span id="daysCount">1</span> Hari</div>
+                <button type="button" class="counter-btn" id="plusBtn">+</button>
+            </div>
+
+            <p class="card-price" id="totalPriceDisplay">
+                Price : Rp2.000
+            </p>
+
+            <div class="confirm-btn-wrapper">
+                <button type="button" class="confirm-btn" id="rawatConfirmBtn">
+                    Confirm☆
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <a href="index.html" class="whatsapp-link">
+                ← Kembali ke Beranda
+            </a>
+
+            <div class="copyright">
+                ©2026 Apéthic
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let days = 1;
+            const pricePerDay = 2000;
+
+            const daysDisplay = document.getElementById("daysCount");
+            const priceDisplay = document.getElementById("totalPriceDisplay");
+            const minusBtn = document.getElementById("minusBtn");
+            const plusBtn = document.getElementById("plusBtn");
+            const confirmBtn = document.getElementById("rawatConfirmBtn");
+
+            function updateDisplay() {
+                daysDisplay.textContent = days;
+                const totalPrice = (days * pricePerDay).toLocaleString("id-ID");
+                priceDisplay.textContent = `Price : Rp${totalPrice}`;
+            }
+
+            minusBtn.addEventListener("click", () => {
+                if (days > 1) {
+                    days--;
+                    updateDisplay();
+                }
+            });
+
+            plusBtn.addEventListener("click", () => {
+                days++;
+                updateDisplay();
+            });
+
+            confirmBtn.addEventListener("click", () => {
+                const totalPrice = (days * pricePerDay).toLocaleString("id-ID");
+                const noWa = "6282254663027";
+                const pesan = `Halo Apéthic Store! Saya ingin memesan Joki Rawat Akun:\n\n` +
+                              `• Durasi: ${days} Hari\n` +
+                              `• Total Harga: Rp${totalPrice}\n\n` +
+                              `Mohon diproses ya, terimakasih!☆`;
+
+                const urlWA = `https://wa.me/${noWa}?text=${encodeURIComponent(pesan)}`;
+                window.open(urlWA, "_blank");
+            });
+        });
+    </script>
+</body>
+</html>
